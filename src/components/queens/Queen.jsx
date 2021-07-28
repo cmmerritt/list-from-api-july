@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Queen = ({ name, image_url, quote }) => (
+const Queen = ({ name, image, quote }) => (
   <figure>
-    <img src={image_url} alt={name} />
+    <img src={image} alt={name} width="300px"/>
     <figcaption>
       <p>{name}</p>
       <p>{quote}</p>
@@ -13,8 +13,8 @@ const Queen = ({ name, image_url, quote }) => (
 
 Queen.propTypes = {
   name: PropTypes.string.isRequired,
-  image_url: PropTypes.string,
-  quote: PropTypes.string,
+  image: PropTypes.string.isRequired,
+  quote: PropTypes.string.isRequired,
 };
 
 export default Queen;

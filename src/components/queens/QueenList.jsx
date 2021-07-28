@@ -20,8 +20,8 @@ QueenList.propTypes = {
   queens: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,
-      image: PropTypes.string,
-      quote: PropTypes.string
+      image: PropTypes.string.isRequired,
+      quote: PropTypes.string.isRequired
     })).isRequired
 };
 
