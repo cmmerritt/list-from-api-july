@@ -10,7 +10,9 @@ export default class DragQueens extends Component {
 
   async componentDidMount() {
     const queens = await fetchQueens();
-    this.setState({ queens, loading: false });
+    setTimeout(() => {
+      this.setState({ queens, loading: false });
+    }, 500);
   }
 
   render() {
