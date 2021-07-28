@@ -1,7 +1,23 @@
 import React, { Component } from 'react';
+import QueenList from '../components/queens/QueenList.jsx';
+import { fetchQueens } from '../services/dragRaceApi.js';
 
 export default class DragQueens extends Component {
+  state = {
+    queens: [],
+    loading: true
+  }
+
+  async componentDidMount() {
+    const queens = await fetchQueens();
+    setTimeout(() => {
+      this.setState({ queens, loading: false });
+    }, 500);
+  }
+
   render() {
-    return <h1>if(queen=winner) -Shante, you stay.-  else -Sashay away.-</h1>;
+    const { queens, loading } = this.state;
+    if(loading) return <h1>Loading...</h1>;
+    return <QueenList queens={queens} />;
   }
 }
