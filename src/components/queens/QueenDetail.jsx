@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { Component } from 'react';
 import { fetchQueenById } from '../../services/dragRaceApi';
 
@@ -5,7 +6,7 @@ import { fetchQueenById } from '../../services/dragRaceApi';
 export default class QueenDetail extends Component {
   state = {
     queen: [],
-    loading: true
+    //loading: true
   };
 
   async componentDidMount() {
@@ -19,9 +20,7 @@ export default class QueenDetail extends Component {
       this.setState({ queen });
     } catch(err) {
       console.log(err);
-    } finally {
-      this.setState({ loading: false });
-    }
+    } 
   }
 
   render() {
@@ -30,8 +29,8 @@ export default class QueenDetail extends Component {
     return (
       <>
         <h1>{queen.name}</h1>
-        <img src={queen.image} alt={queen.name}/>
-        <p>Words of Wisdom: {queen.quote}</p>
+        <img src={queen.image_url} alt={queen.name} height="400px" />
+        <p><b>Words of Wisdom:</b> {queen.quote}</p>
       </>
     );
   }

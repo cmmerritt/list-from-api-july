@@ -1,20 +1,20 @@
 /* eslint-disable react/react-in-jsx-scope */
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import DragQueens from '../containers/DragQueens';
-import Queen from '../components/queens/Queen';
+import QueenDetail from '../components/queens/QueenDetail';
 import React from 'react';
 
 export default function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/" 
+        <Route path="/" exact={true}
           render={routerProps => (
             <DragQueens />
           )} />;
-        <Route path="/queens/:id"
+        <Route path="/queens/:id" exact={true}
           render={routerProps => (
-            <Queen {...routerProps} />
+            <QueenDetail {...routerProps} />
           )} />
       </Switch>
     </Router>

@@ -9,6 +9,7 @@ const QueenList = ({ queens }) => {
         name={queen.name}
         image={queen.image_url}
         quote={queen.quote}
+        id={queen.id}
       />
     </li>
   ));
