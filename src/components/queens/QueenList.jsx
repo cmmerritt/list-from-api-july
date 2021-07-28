@@ -4,10 +4,10 @@ import Queen from './Queen';
 
 const QueenList = ({ queens }) => {
   const queenElements = queens.map((queen) => (
-    <li key={queen.name}>
+    <li key={queen.id}>
       <Queen 
         name={queen.name}
-        image={queen.image}
+        image={queen.image_url}
         quote={queen.quote}
       />
     </li>
