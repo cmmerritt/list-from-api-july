@@ -1,18 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import Queen from './Queen';
 
 const QueenList = ({ queens }) => {
   const queenElements = queens.map((queen) => (
     <li key={queen.id}>
-      <Link to={`/queens/${queen.id}`}>
-        <Queen 
-          name={queen.name}
-          image={queen.image_url}
-          quote={queen.quote}
-        />
-      </Link>
+      <Queen 
+        name={queen.name}
+        image={queen.image_url}
+        quote={queen.quote}
+      />
     </li>
   ));
 
@@ -24,7 +21,8 @@ QueenList.propTypes = {
     PropTypes.shape({
       name: PropTypes.string.isRequired,
       image: PropTypes.string.isRequired,
-      quote: PropTypes.string.isRequired
+      quote: PropTypes.string.isRequired,
+      id: PropTypes.string.isRequired
     })).isRequired
 };
 
